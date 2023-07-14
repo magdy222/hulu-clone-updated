@@ -1,11 +1,13 @@
 import { ThumbUpIcon } from '@heroicons/react/outline'
 import Image from 'next/image'
+import Link from 'next/link'
 import React, { forwardRef } from 'react'
 
 const MovieCard = forwardRef(({ result }, ref) => {
   const BASE_URL = "https://image.tmdb.org/t/p/original/"
 
   return (
+    <Link href={`/movie/${result.id}`}>
     <div ref={ref} className='p2 group cursor-pointer transition duration-200 ease-in transform sm:hover:scale-105 hover:z-50 my-2'>
       <div className='relative'>
         <Image
@@ -38,6 +40,7 @@ const MovieCard = forwardRef(({ result }, ref) => {
         }
       `}</style>
     </div>
+    </Link>
   )
 })
 
