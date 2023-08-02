@@ -8,7 +8,7 @@ const MovieCard = forwardRef(({ result }, ref) => {
 
   return (
     <Link href={`/movie/${result.id}`}>
-    <div ref={ref} className='p2 group cursor-pointer transition duration-200 ease-in transform sm:hover:scale-105 hover:z-50 my-2'>
+    <div ref={ref} className='px-2 group cursor-pointer transition duration-200 ease-in transform sm:hover:scale-105 hover:z-50 my-2'>
       <div className='relative'>
         <Image
           layout='responsive'
@@ -25,13 +25,15 @@ const MovieCard = forwardRef(({ result }, ref) => {
       </div>
       <div className='flex'>
         <div>
-          <p className='truncate max-w-md'>{result.overview}</p>
-          <h2 className='mt-1 text-2xl text-white transition-all duration-100 ease-in-out group-hover:font-bold '>
-            {result.title || result.original_name}
-          </h2>
-          <p className='flex items-center opacity-0 group-hover:opacity-100 '>
-            <ThumbUpIcon className='h-5 mx-2' /> {result.vote_count}
-          </p>
+          <p className='truncate px-3 max-w-md'>{result.overview}</p>
+          <div className='flex justify-between items-center px-3  w-[400px]'>
+            <h2 className='mt-1 text-2xl text-white transition-all duration-100 ease-in-out group-hover:font-bold '>
+              {result.title || result.original_name}
+            </h2>
+            <p className='flex items-center opacity-0 group-hover:opacity-100 '>
+              <ThumbUpIcon className='' /> {result.vote_count}
+            </p>
+          </div>
         </div>
       </div>
       <style jsx>{`
